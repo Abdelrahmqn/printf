@@ -3,17 +3,14 @@
 #include <unistd.h>
 /**
  * _printf - according to format produce output.
- *
  * @format: is a character string.The format string is composed of zero
- *
  * Return: the number of characters printed.
  */
 int _printf(const char *format, ...)
 {
-	char percent;
-	int count = 0;
+	char percent = '%';
+	int count = 0, i = 0;
 	va_list args;
-	int i = 0;
 
 	va_start(args, format);
 	while (format && format[i])
@@ -23,7 +20,6 @@ int _printf(const char *format, ...)
 			i++;
 			if (format[i] == '\0')
 				break;
-
 		switch (format[i])
 		{
 		case 'c':
@@ -33,7 +29,6 @@ int _printf(const char *format, ...)
 			count = count + _print_str(args);
 			break;
 		case '%':
-		percent = '%';
 			write(1, &percent, 1);
 			count++;
 			break;
