@@ -1,46 +1,50 @@
 #include "main.h"
+#include <stdarg.h>
+#include <unistd.h>
 /**
  * _printf - according to format produce output.
- *
  * @format: is a character string.The format string is composed of zero
- *
  * Return: the number of characters printed.
  */
 int _printf(const char *format, ...)
 {
-	int counting = 0;
+	char percent = '%';
+	int count = 0, i = 0;
 	va_list args;
 
 	va_start(args, format);
-	while (*format != '\0')
+	while (format && format[i])
 	{
-	if (format == '%')
+		if (format[i] == '%')
 		{
-		switch (*format)
+			i++;
+			if (format[i] == '\0')
+				break;
+		switch (format[i])
 		{
 		case 'c':
-			count += _print_char(args);
+			count = count + _print_char(args);
 			break;
 		case 's':
-			count += _print_str(args);
+			count = count + _print_str(args);
 			break;
 		case '%':
-			_putchar('%');
+			write(1, &percent, 1);
 			count++;
 			break;
 		default:
-			_putchar('%');
-			_putchar(*format);
-			count += 2;
+			write(1, &format[i], 1);
+			count++;
 			break;
 		}
+		i++;
 		}
 	else
 	{
-		_putchar(*format);
-		count++;
+	write(1, &format[i], 1);
+	count++;
+	i++;
 	}
-	format++;
 	}
 	va_end(args);
 	return (count);
