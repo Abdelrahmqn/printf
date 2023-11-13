@@ -36,7 +36,7 @@ int _printf(const char *format, ...)
 		default:
 			_putchar('%');
 			_putchar(*format);
-			counting += 2;
+			counting++;
 			break;
 		}
 		}
