@@ -1,4 +1,5 @@
-#inlucde "main.h"
+#include "main.h"
+#include <stdarg.h>
 /**
  * _print_char - function that print characters.
  * @args: unlimited input.
@@ -19,13 +20,16 @@ int _print_char(va_list args)
 int _print_str(va_list args)
 {
 	int count = 0;
-	char str = va_arg(args, int);
+	char *str = va_arg(args, char *);
+
+	if (str == NULL)
+		str = "(null)";
 
 	while (*str)
 	{
 	_putchar(*str);
-	count++
-		str++
+	count++;
+		str++;
 	}
 	return (count);
 }
