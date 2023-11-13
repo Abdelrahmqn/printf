@@ -10,8 +10,8 @@ int main(void)
 {
 	int len1, len2;
 
-	len1 = _printf("char : %c ,, string: %s\n", 'k', "hi");
-	len2 = _printf("char : %c ,, string: %s\n", 'k', "hi");
-	_printf("%d %d\n", len1, len2);
+	len1 = _printf("char : %c , string: %s\n", 'k', "hi");
+	len2 = _printf("char : %c , string: %s\n", 'k', "hi");
+	_printf("%i %i\n", len1, len2);
 	return (0);
 }

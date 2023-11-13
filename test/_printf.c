@@ -1,5 +1,4 @@
 #include "main.h"
-#include <stdarg.h>
 /**
  * _printf - according to format produce output.
  *
@@ -15,38 +14,34 @@ int _printf(const char *format, ...)
 	va_start(args, format);
 	while (*format != '\0')
 	{
-		if (*format == '%')
+	if (format == '%')
 		{
-			format++;
-			if (*format == '\0')
-				break;
-
 		switch (*format)
 		{
 		case 'c':
-			counting += _print_char(args);
+			count += _print_char(args);
 			break;
 		case 's':
-			counting += _print_str(args);
+			count += _print_str(args);
 			break;
 		case '%':
 			_putchar('%');
-			counting++;
+			count++;
 			break;
 		default:
 			_putchar('%');
 			_putchar(*format);
-			counting += 2;
+			count += 2;
 			break;
 		}
 		}
 	else
 	{
 		_putchar(*format);
-		counting++;
+		count++;
 	}
 	format++;
 	}
 	va_end(args);
-	return (counting);
+	return (count);
 }
