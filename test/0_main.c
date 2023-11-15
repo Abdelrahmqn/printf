@@ -14,8 +14,9 @@ int main(void)
 	_printf("%s\n", "I am a string !");
 	_printf("%c\n", 'S');
 	_printf("%%\n");
-	_printf("%d", 1024);
-	_printf("%d", -1024);
+	_printf("%d\n", 1024);
+	_printf("%d\n", -1024);
+	_printf("binary number of 98: %b\n", 98);
 	if (len1 != len2)
 		_printf("yes\n \n");
 return (0);

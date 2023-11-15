@@ -23,6 +23,9 @@ int count = 0;
 		count += _print_decimal(args);
 		break;
 	case 'i':
+	case 'b':
+		count += _print_binary(va_arg(args, int));
+		break;
 		count += _print_integer(args);
 		break;
 	case '%':

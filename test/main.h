@@ -13,4 +13,6 @@ int _print_str(va_list args);
 int _print_integer(va_list args);
 int _print_decimal(va_list args);
 int _print_numbers(int number);
+int _print_binary(int number);
+int _print_b_numbers(va_list args);
 #endif
