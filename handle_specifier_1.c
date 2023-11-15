@@ -26,8 +26,6 @@ int count = 0;
 	case 'b':
 		count += _print_binary(va_arg(args, int));
 		break;
-		count += _print_integer(args);
-		break;
 	case '%':
 		write(1, &specifier, 1);
 		count++;

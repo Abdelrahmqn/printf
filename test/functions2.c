@@ -9,7 +9,7 @@
 int _print_binary(int number)
 {
 int count = 0;
-char binary_nums;
+char binary_num;
 char zero = '0';
 
 if (number < 0)
@@ -22,11 +22,10 @@ if (number == 0)
 }
 	while (number > 0)
 {
-binary_nums = (number % 2) + '0';
-write(1, &binary_nums, 1);
+binary_num = (number % 2) + '0';
 count++;
+write(1, &binary_num, 1);
 number /= 2;
-
 }
 return (count);
 }
