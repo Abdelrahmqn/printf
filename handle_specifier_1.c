@@ -2,9 +2,10 @@
 #include <unistd.h>
 #include <stdio.h>
 /**
- * _handle_specifier - function that handle my specifier.
- * @specifier: used for switch cases.
- * @args: input argument.
+ * _handle_specifier- handles specifiers.
+ * @specifier: conversion specifier.
+ * @args: variable arguments list
+ * Return: the number of characters printed.
  */
 int _handle_specifier(char specifier, va_list args)
 {
