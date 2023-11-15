@@ -18,9 +18,6 @@ int _handle_specifier(char specifier, va_list args)
 	case 's':
 		count = count + _print_str(args);
 		break;
-	case 'd':
-		count += _print_integer(args);
-		break;
 	case '%':
 		write(1, &specifier, 1);
 		count++;
