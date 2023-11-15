@@ -6,7 +6,7 @@
  * @specifier: used for switch cases.
  * @args: input argument.
  */
-void _handle_specifier(char specifier, va_list args)
+int _handle_specifier(char specifier, va_list args)
 {
 	int count = 0;
 
@@ -30,4 +30,5 @@ void _handle_specifier(char specifier, va_list args)
 		count++;
 		break;
 	}
+	return (count);
 }
