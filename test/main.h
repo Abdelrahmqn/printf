@@ -6,8 +6,9 @@
 #include <stdlib.h>
 #include <string.h>
 
-int _putchar(char c);
+void _handle_specifier(char specifier, va_list args);
 int _printf(const char *format, ...);
 int _print_char(va_list args);
 int _print_str(va_list args);
+int _print_integer(va_list args);
 #endif
