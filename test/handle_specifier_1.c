@@ -13,7 +13,7 @@ void _handle_specifier(char specifier, va_list args)
 	switch (specifier)
 	{
 	case 'c':
-		count = count + _print_char(args);
+		count += _print_char(args);
 		break;
 	case 's':
 		count = count + _print_str(args);
