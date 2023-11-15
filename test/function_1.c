@@ -34,7 +34,29 @@ int _print_str(va_list args)
 	}
 	return (count);
 }
-		
+/**
+ * _print_numbers - helper function for %d %i
+ * @the_num: the number to print.
+ * Return: the number of characters printed.
+ */
+int _print_numbers(int number)
+{
+	int count = 0;
+	unsigned int temp_num = number;
+	char integers;
+	if (number < 0)
+	{
+		write(1, "-", 1);
+		temp_num = temp_num * -1;
+	count++;
+	}
+	if (temp_num / 10)
+		count += _print_numbers(temp_num / 10);
+	integers = (temp_num % 10) + '0';
+	write(1, &integers, 1);
+	count++;
+	return (count);
+}
 /**
  * _print_integer - function that prints an integer.
  * @args: input arguments.
@@ -42,33 +64,24 @@ int _print_str(va_list args)
  */
 int _print_integer(va_list args)
 {
-	int count = 0, integer = 0;
-	char negative_sign = '-';
-	int number = 1;
-	int temp_numb;
-	char print_the_number;
+	int v_number1 = 0;
+	int number = va_arg(args, int);
+	
+	v_number1 += _print_numbers(number);
 
-	integer = va_arg(args, int);
-	if (integer < 0)
-	{
-		write(1, &negative_sign, 1);
-	count++;
-		integer = -integer;
+	return (v_number1);
+}
+/**
+ * _print_decimal - function that prints an integer.
+ * @args: input arguments.
+ * Return: return the value.
+ */
+int _print_decimal(va_list args)
+{
+	int number;
+	int v_number = 0;
 
-	}
-	temp_numb = integer;
-	while (temp_numb / 10 != 0)
-	{
-		number = number * 10;
-		temp_numb = temp_numb / 10;
-	}
-	while (number != 0)
-	{
-		print_the_number = '0' + integer / number;
-	write(1, &print_the_number, 1);
-	count++;
-	integer = integer % number;
-	number = number / 10;
-	}
-	return (count);
+	number = va_arg(args, int);
+	v_number += _print_numbers(number);
+	return (v_number);
 }

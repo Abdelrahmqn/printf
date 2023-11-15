@@ -9,7 +9,7 @@
  */
 int _handle_specifier(char specifier, va_list args)
 {
-	int count = 0;
+int count = 0;
 
 	switch (specifier)
 	{
@@ -20,6 +20,9 @@ int _handle_specifier(char specifier, va_list args)
 		count = count + _print_str(args);
 		break;
 	case 'd':
+		count += _print_decimal(args);
+		break;
+	case 'i':
 		count += _print_integer(args);
 		break;
 	case '%':

@@ -17,7 +17,7 @@ int _printf(const char *format, ...)
 		if (format[i] == '%')
 		{
 			i++;
-		count += _handle_specifier(format[i], args);
+			count += _handle_specifier(format[i], args);
 		i++;
 		}
 	else

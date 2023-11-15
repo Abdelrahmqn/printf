@@ -1,4 +1,5 @@
 #include "main.h"
+#include <limits.h>
 /**
  * main - Entry point
  * return: the test of the file
@@ -9,9 +10,13 @@ int main(void)
 
 	len1 = _printf("char: %c, string: %s\n", 'U', "printf function");
 	len2 = _printf("char: %c, string: %s\n", 'U', "printf function");
-	_printf("%i ,%i\n", len1, len2);
+	_printf("Let's print a simple sentence.\n");
+	_printf("%s\n", "I am a string !");
 	_printf("%c\n", 'S');
-	_printf("A char inside a sentence: %c. Did it work?\n", 'F');
-	_printf("Let'see if the cast is correctly done: %c. Did it work?\n", 48);
+	_printf("%%\n");
+	_printf("%d", 1024);
+	_printf("%d", -1024);
+	if (len1 != len2)
+		_printf("yes\n \n");
 return (0);
 }
