@@ -28,6 +28,12 @@ int count = 0;
 	case 'b':
 		count += _print_in_binary(args);
 		break;
+	case 'u':
+		count += _print_b10(args);
+		break;
+	case 'o':
+		count += _print_octal_nums(args);
+		break;
 	case '%':
 		write(1, &specifier, 1);
 		count++;

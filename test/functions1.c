@@ -2,18 +2,6 @@
 #include <stdarg.h>
 #include <unistd.h>
 /**
- * _print_char - function that print characters.
- * @args: unlimited input.
- * Return: the value of function.
- */
-int _print_char(va_list args)
-{
-	char c = va_arg(args, int);
-
-	write(1, &c, 1);
-	return (1);
-}
-/**
  * _print_str - function that prints str.
  * @args: unlimited input.
  * Return: the value of the function.
@@ -36,7 +24,7 @@ int _print_str(va_list args)
 }
 /**
  * _print_numbers - helper function for %d %i
- * @the_num: the number to print.
+ * @number: the number to print.
  * Return: the number of characters printed.
  */
 int _print_numbers(int number)
@@ -44,6 +32,7 @@ int _print_numbers(int number)
 	int count = 0;
 	unsigned int temp_num = number;
 	char integers;
+
 	if (number < 0)
 	{
 		write(1, "-", 1);
@@ -66,7 +55,7 @@ int _print_integer(va_list args)
 {
 	int v_number1 = 0;
 	int number = va_arg(args, int);
-	
+
 	v_number1 += _print_numbers(number);
 
 	return (v_number1);
@@ -84,4 +73,17 @@ int _print_decimal(va_list args)
 	number = va_arg(args, int);
 	v_number += _print_numbers(number);
 	return (v_number);
+}
+/**
+ * _print_b10 - function that prints number in b 10.
+ * @args: input arguments.
+ * Return: the value.
+ */
+int _print_b10(va_list args)
+{
+	int b10_number = va_arg(args, int);
+	int sum_number = 0;
+
+	sum_number += _print_numbers(b10_number);
+	return (sum_number);
 }

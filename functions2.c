@@ -2,6 +2,19 @@
 #include <unistd.h>
 #include <stdio.h>
 /**
+ * _print_char - function that print characters.
+ * @args: unlimited input.
+ * Return: the value of function.
+ */
+int _print_char(va_list args)
+{
+	char c = va_arg(args, int);
+
+	write(1, &c, 1);
+	return (1);
+}
+
+/**
  * _print_binary - Helper function prints the (binary representation).
  * @number: the input number.
  * Return: the count (sum) summary of the function.
@@ -48,4 +61,54 @@ int _print_in_binary(va_list args)
 
 	temp += _print_binary(number);
 	return (temp);
+}
+#include "main.h"
+#include <unistd.h>
+#include <stdio.h>
+/**
+* _print_octal - function that helps to print octal.
+* @number: the input number.
+* Return: the sum of function.
+*/
+int _print_octal(int number)
+{
+	int i = 0;
+	int count = 0;
+	char octal_num;
+	char zero = '0';
+	int reverse_digits[70];
+
+	if (number < 0)
+	return (-1);
+
+	if (number == 0)
+	{
+	write(1, &zero, 1);
+	return (1);
+	}
+	while (number > 0)
+	{
+	octal_num = (number % 8) + '0';
+	reverse_digits[count] = octal_num;
+	count++;
+	number /= 8;
+	}
+	for (i = count - 1; i >= 0; i--)
+	{
+	write(1, &reverse_digits[i], 1);
+	}
+	return (count);
+}
+/**
+ * _print_octal_nums - function that prints octal numbers.
+ * @args: input the arguments.
+ * Return: the sum of the function.
+ */
+int _print_octal_nums(va_list args)
+{
+	int o_num = va_arg(args, int);
+	int sum = 0;
+
+	sum += _print_octal(o_num);
+	return (sum);
 }
