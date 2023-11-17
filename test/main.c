@@ -27,8 +27,7 @@ int main(void)
 	_printf("Unsigned octal:[%o]\n", 98);
 	printf("Unsigned octal:[%o]\n", 98);
 	_printf("}\n");
-
-
+	_printf("Complete the sentence: You %r nothing, Jon Snow.\n", "know");
 	if (len1 != len2)
 		_printf("yes\n \n");
 return (0);

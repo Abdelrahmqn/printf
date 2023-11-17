@@ -34,6 +34,9 @@ int count = 0;
 	case 'o':
 		count += _print_octal_nums(args);
 		break;
+	case 'r':
+		count += _print_rev_str(args);
+		break;
 	case '%':
 		write(1, &specifier, 1);
 		count++;

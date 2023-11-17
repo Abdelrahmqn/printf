@@ -2,19 +2,6 @@
 #include <unistd.h>
 #include <stdio.h>
 /**
- * _print_char - function that print characters.
- * @args: unlimited input.
- * Return: the value of function.
- */
-int _print_char(va_list args)
-{
-	char c = va_arg(args, int);
-
-	write(1, &c, 1);
-	return (1);
-}
-
-/**
  * _print_binary - Helper function prints the (binary representation).
  * @number: the input number.
  * Return: the count (sum) summary of the function.
@@ -111,4 +98,29 @@ int _print_octal_nums(va_list args)
 
 	sum += _print_octal(o_num);
 	return (sum);
+}
+/**
+ * _print_rev_str - function that prints str.
+ * @args: navigate the arguments.
+ * Return: the value of the function.
+ */
+int _print_rev_str(va_list args)
+{
+	int i;
+	int count = 0;
+	char *str = va_arg(args, char *);
+
+	if (str == NULL)
+		str = "(null)";
+
+	while (*str)
+	{
+	count++;
+	str++;
+	}
+	for (i = count; i > 0; i++)
+	{
+		write(1, str, 1);
+	}
+	return (count);
 }

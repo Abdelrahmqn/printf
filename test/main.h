@@ -17,4 +17,5 @@ int _print_binary(int number);
 int _print_in_binary(va_list args);
 int _print_b10(va_list args);
 int _print_octal_nums(va_list args);
+int _print_rev_str(va_list args);
 #endif
