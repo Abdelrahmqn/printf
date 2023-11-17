@@ -17,6 +17,9 @@ int main(void)
 	_printf("%d\n", 1024);
 	_printf("%d\n", -1024);
 	_printf("binary number of 98: %b\n", 98);
+	_printf("binary here: %b\n", 1024);
+	_printf(NULL);
+	_printf("%i", 1024);
 	if (len1 != len2)
 		_printf("yes\n \n");
 return (0);

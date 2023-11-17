@@ -14,4 +14,5 @@ int _print_integer(va_list args);
 int _print_decimal(va_list args);
 int _print_numbers(int number);
 int _print_binary(int number);
+int _print_in_binary(va_list args);
 #endif

@@ -23,8 +23,10 @@ int count = 0;
 		count += _print_decimal(args);
 		break;
 	case 'i':
+		count += _print_integer(args);
+		break;
 	case 'b':
-		count += _print_binary(va_arg(args, int));
+		count += _print_in_binary(args);
 		break;
 	case '%':
 		write(1, &specifier, 1);
