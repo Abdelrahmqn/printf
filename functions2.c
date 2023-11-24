@@ -113,15 +113,14 @@ int _print_rev_str(va_list args)
 	if (str == NULL)
 		str = "(null)";
 
-	while (*str != '\0')
+	while (*str)
 	{
 	count++;
 	str++;
 	}
-	str -= count;
-	for (i = count - 1; i >= 0; i--)
+	for (i = count; i > 0; i++)
 	{
-		write(1, &str[i], 1);
+		write(1, str, 1);
 	}
 	return (count);
 }
