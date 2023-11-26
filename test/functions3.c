@@ -16,7 +16,7 @@ int _print_char(va_list args)
 /**
  * _print_positive - function that prints positive numbers.
  * @args: input the argument.
- * Retrurn: the value of count or the number.
+ * Return: the value of count or the number.
  */
 int _print_positive(va_list args)
 {
@@ -25,10 +25,14 @@ int _print_positive(va_list args)
 
 	if (num >= 0)
 	{
-		write(1, "+",1);
+		write(1, "+", 1);
 	value++;
 	}
-	num = (num < 0) ? -num : num;
+	else
+	{
+		write(1, "-", 1);
+		num = -num;
+	}
 	value += _print_numbers(num);
 	return (value);
 }

@@ -3,7 +3,7 @@
 #include <stdio.h>
 /**
  * _handle_specifier_2 - handles specifiers.
- * @specifier: conversion specifier.
+ * @spec: conversion specifier.
  * @args: variable arguments list
  * Return: the number of characters printed.
  */
