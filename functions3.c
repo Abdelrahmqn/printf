@@ -25,6 +25,7 @@ int _print_positive(va_list args)
 
 	if (num >= 0)
 	{
+		write(1, "+", 1);
 	value++;
 	}
 	else
