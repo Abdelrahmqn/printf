@@ -17,16 +17,24 @@ int _printf(const char *format, ...)
 		if (format[i] == '%')
 		{
 			i++;
-			count += _handle_specifier(format[i], args);
-			count += _handle_specifier_2(format[i], args);
-		i++;
+			if (format[i] != '\0')
+			{
+				if (format[i] == '+')
+				{
+				count += _handle_specifier(format[i], args);
+				}
+				else
+				{
+				count += _handle_specifier_2(format[i], args);
+				}
+			}
 		}
 	else
 	{
 	write(1, &format[i], 1);
 	count++;
-	i++;
 	}
+	i++;
 	}
 	va_end(args);
 	return (count);
