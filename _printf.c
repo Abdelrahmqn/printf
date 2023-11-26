@@ -27,7 +27,6 @@ int _printf(const char *format, ...)
 				{
 				count += _handle_specifier(format[i], args);
 				}
-				i++;
 			}
 		}
 	else
