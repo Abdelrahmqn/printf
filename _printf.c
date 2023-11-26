@@ -19,13 +19,13 @@ int _printf(const char *format, ...)
 			i++;
 			if (format[i] != '\0')
 			{
-				if (format[i] == '+')
+				if (format[i] == '+' || format[i] == 'R')
 				{
-				count += _handle_specifier(format[i], args);
+				count += _handle_specifier_2(format[i], args);
 				}
 				else
 				{
-				count += _handle_specifier_2(format[i], args);
+				count += _handle_specifier(format[i], args);
 				}
 			}
 		}

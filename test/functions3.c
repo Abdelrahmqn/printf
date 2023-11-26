@@ -25,13 +25,10 @@ int _print_positive(va_list args)
 
 	if (num >= 0)
 	{
+		write(1, "+",1);
 	value++;
 	}
-	else
-	{
-		write(1, "-", 1);
-		num = -num;
-	}
+	num = (num < 0) ? -num : num;
 	value += _print_numbers(num);
 	return (value);
 }
